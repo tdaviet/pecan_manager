@@ -1,1 +1,1 @@
-Pecan Manager - making your job easier through harvest tracking
+# Pecan Manager: making your job easier through harvest tracking
