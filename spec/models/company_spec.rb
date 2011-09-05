@@ -36,5 +36,12 @@ describe "Company" do
       long_name_company = Company.new(@attr.merge(:name => "a" * 51))
       long_name_company.should_not be_valid
     end
+
+    it "should reject duplicate names" do
+      Company.create!(@attr)
+      company_with_duplicate_name = User.new(@attr)
+      company_with_duplicate_name.should_not be_valid
+    end
+
   end
 end
