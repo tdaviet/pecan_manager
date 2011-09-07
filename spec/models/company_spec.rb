@@ -39,7 +39,7 @@ describe "Company" do
 
     it "should reject duplicate names" do
       Company.create!(@attr)
-      company_with_duplicate_name = User.new(@attr)
+      company_with_duplicate_name = Company.new(@attr)
       company_with_duplicate_name.should_not be_valid
     end
 
