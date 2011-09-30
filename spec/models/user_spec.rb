@@ -14,16 +14,17 @@ require 'spec_helper'
 describe User do
 
   before(:each) do
-    @attr = { 
+    @company = Factory(:company)
+    @attr = {
       :name                   => "Example User", 
       :email                  => "user@example.com",
-      :password               => "foobar",
-      :password_confirmation  => "foobar" 
+      :user_password               => "foobar",
+      :user_password_confirmation  => "foobar"
       }
   end
 
   it "should create a new instance given valid attributes" do
-    User.create!(@attr)
+    @company.users.create!(@attr)
   end
   
   it "should require a name" do
@@ -75,24 +76,24 @@ describe User do
     describe "password validations" do
 
       it "should require a password" do
-        User.new(@attr.merge(:password => "", :password_confirmation => "")).
+        User.new(@attr.merge(:user_password => "", :user_password_confirmation => "")).
           should_not be_valid
       end
 
       it "should require a matching password confirmation" do
-        User.new(@attr.merge(:password_confirmation => "invalid")).
+        User.new(@attr.merge(:user_password_confirmation => "invalid")).
           should_not be_valid
       end
 
       it "should reject short passwords" do
         short = "a" * 5
-        hash = @attr.merge(:password => short, :password_confirmation => short)
+        hash = @attr.merge(:user_password => short, :user_password_confirmation => short)
         User.new(hash).should_not be_valid
       end
 
       it "should reject long passwords" do
         long = "a" * 41
-        hash = @attr.merge(:password => long, :password_confirmation => long)
+        hash = @attr.merge(:user_password => long, :user_password_confirmation => long)
         User.new(hash).should_not be_valid
       end
     end
@@ -106,17 +107,22 @@ describe User do
       it "should have an encrypted password attribute" do
         @user.should respond_to(:encrypted_password)
       end
+
+      it "should set the encrypted password" do
+        @user.encrypted_password.should_not be_blank
+      end
       
       describe "has_password? method" do
 
         it "should be true if the passwords match" do
-          @user.has_password?(@attr[:password]).should be_true
-        end    
+          @user.has_password?(@attr[:user_password]).should be_true
+        end
 
         it "should be false if the passwords don't match" do
           @user.has_password?("invalid").should be_false
-        end 
+        end
       end
+
       
       describe "authenticate method" do
 
@@ -131,7 +137,7 @@ describe User do
         end
 
         it "should return the user on email/password match" do
-          matching_user = User.authenticate(@attr[:email], @attr[:password])
+          matching_user = User.authenticate(@attr[:email], @attr[:user_password])
           matching_user.should == @user
         end
       end

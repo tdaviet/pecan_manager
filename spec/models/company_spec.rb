@@ -15,6 +15,7 @@ describe "Company" do
   before(:each) do
     @attr = {
        :name => "John Doe Farms"
+       #:password => "foobar"
     }
 
   end
@@ -31,6 +32,10 @@ describe "Company" do
 
     it "should include 'name'" do
       @company.should respond_to(:name)
+    end
+
+    it "should have a users attribute" do
+      @company.should respond_to(:users)
     end
   end
 
@@ -52,6 +57,7 @@ describe "Company" do
       company_with_duplicate_name = Company.new(@attr)
       company_with_duplicate_name.should_not be_valid
     end
-
   end
+
+
 end

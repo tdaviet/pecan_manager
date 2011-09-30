@@ -9,9 +9,11 @@
 #  updated_at :datetime
 
 class User < ActiveRecord::Base
-  attr_accessor :password
-  attr_accessible :name, :email, :password, :password_confirmation
-  
+  attr_accessor :user_password
+  attr_accessible :name, :email, :user_password, :user_password_confirmation
+
+  belongs_to :company
+
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     
   validates :name,  :presence   => true,
@@ -21,9 +23,9 @@ class User < ActiveRecord::Base
                     :uniqueness => { :case_sensitive => false }
    
    # Automatically create the virtual attribute 'password_confirmation'.
-  validates :password, :presence     => true,
-                       :confirmation => true,
-                       :length       => { :within => 6..40 }
+  validates :user_password, :presence     => true,
+                            :confirmation => true,
+                            :length       => { :within => 6..40 }
   
   before_save :encrypt_password
   
@@ -43,7 +45,7 @@ class User < ActiveRecord::Base
 
     def encrypt_password
       self.salt = make_salt if new_record?
-      self.encrypted_password = encrypt(password)
+      self.encrypted_password = encrypt(user_password)
     end
 
     def encrypt(string)
@@ -51,7 +53,7 @@ class User < ActiveRecord::Base
     end
 
     def make_salt
-      secure_hash("#{Time.now.utc}--#{password}")
+      secure_hash("#{Time.now.utc}--#{user_password}")
     end
 
     def secure_hash(string)
