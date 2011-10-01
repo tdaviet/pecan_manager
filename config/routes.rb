@@ -1,5 +1,10 @@
 PecanManager::Application.routes.draw do
+  #get "companies/new"
+
+  resources :companies
   resources :users
+
+  match '/signup', :to => 'companies#new'
   
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'

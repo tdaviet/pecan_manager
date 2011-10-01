@@ -16,8 +16,8 @@ describe User do
   before(:each) do
     @company = Factory(:company)
     @attr = {
-      :name                   => "Example User", 
-      :email                  => "user@example.com",
+      :name                        => "Example User",
+      :email                       => "user@example.com",
       :user_password               => "foobar",
       :user_password_confirmation  => "foobar"
       }
@@ -143,5 +143,18 @@ describe User do
       end
     
     end
+
+  describe 'company associations' do
+
+    before(:each) do
+      @user = @company.users.create(@attr)
+    end
+
+    it "should have a company attribute" do
+      @user.should respond_to(:company)
+      #@user.company_id.should == @company.id
+      #@user.company.should == @company
+    end
+  end
 end
 

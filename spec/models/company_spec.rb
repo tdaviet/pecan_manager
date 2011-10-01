@@ -15,9 +15,7 @@ describe "Company" do
   before(:each) do
     @attr = {
        :name => "John Doe Farms"
-       #:password => "foobar"
-    }
-
+      }
   end
   
   it "should create a new instance given valid attributes" do
@@ -59,5 +57,14 @@ describe "Company" do
     end
   end
 
+  describe "user associations" do
 
+    before(:each) do
+      @company = Company.create(@attr)
+    end
+
+    it "should have a users attribute" do
+      @company.should respond_to(:users)
+    end
+  end
 end
