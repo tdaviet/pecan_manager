@@ -8,5 +8,6 @@ Factory.define :user do |user|
   user.email                 "mhartl@example.com"
   user.user_password              "foobar"
   user.user_password_confirmation "foobar"
+  user.association :company
 end
 

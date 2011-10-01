@@ -15,20 +15,22 @@ class User < ActiveRecord::Base
   belongs_to :company
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-    
+
   validates :name,  :presence   => true,
                     :length     => { :maximum => 50 }
   validates :email, :presence   => true,
                     :format     => { :with => email_regex },
                     :uniqueness => { :case_sensitive => false }
-   
-   # Automatically create the virtual attribute 'password_confirmation'.
+
+  #Automatically create the virtual attribute 'password_confirmation'.
   validates :user_password, :presence     => true,
                             :confirmation => true,
                             :length       => { :within => 6..40 }
-  
+
+  validates :company_id,  :presence => true
+
   before_save :encrypt_password
-  
+
     # Return true if the user's password matches the submitted password.
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)
