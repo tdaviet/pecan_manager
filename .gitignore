@@ -4,4 +4,4 @@ log/*.log
 tmp/
 nbproject/
 bin/
-.idea/
+.idea/*

@@ -2,6 +2,7 @@ class CompaniesController < ApplicationController
   def new
     @company = Company.new
     @title = "New Company Sign up"
+    1.times { @company.users.build }
   end
 
   def create

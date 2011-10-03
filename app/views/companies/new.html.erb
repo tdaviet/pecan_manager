@@ -1,11 +1,32 @@
 <h1>New Company Sign up</h1>
 
-<%= form_for(@company) do |f| %>
+<%= form_for @company do |f| %>
     <%= render 'shared/error_messages' %>
     <div class="field">
       <%= f.label :company_name %><br />
       <%= f.text_field :name %>
-    </div>
+    </div>  <br />
+     <h1> Add your first User</h1>
+  <% for user in @company.users %>
+      <%= fields_for "company[user_attributes][]", user do |user_form| %>
+        <div class="field">
+          <%= user_form.label :user_name %> <br />
+          <%= user_form.text_field :name %>
+        </div>
+        <div class="field">
+          <%= user_form.label :user_email %> <br />
+          <%= user_form.text_field :email %>
+        </div>
+        <div class="field">
+          <%= user_form.label :user_password %> <br />
+          <%= user_form.password_field :user_password %>
+        </div>
+        <div class="field">
+          <%= user_form.label :password_confirmation %> <br />
+          <%= user_form.password_field :user_password_confirmation %>
+        </div>
+      <% end %>
+  <% end %>
     <div class="actions">
       <%= f.submit "Sign up" %>
     </div>
