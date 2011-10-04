@@ -67,4 +67,6 @@ describe "Company" do
       @company.should respond_to(:users)
     end
   end
+
+
 end

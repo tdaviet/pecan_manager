@@ -18,4 +18,10 @@ class Company < ActiveRecord::Base
   validates :name,  :presence => true,
                     :length   => { :maximum => 50 },
                     :uniqueness => { :case_sensitive => false }
+
+  def user_attributes=(user_attributes)
+    user_attributes.each do |attributes|
+      users.build(attributes)
+    end
+  end
 end

@@ -21,7 +21,7 @@ describe UsersController do
       
       it "should have the right title" do
         get :show, :id => @user
-        response.should have_selector("title", :content => @user.name)
+        response.should have_selector("title", :content => @user.email)
       end
 
       it "should include the user's name" do

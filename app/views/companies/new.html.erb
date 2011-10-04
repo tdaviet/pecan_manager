@@ -9,22 +9,18 @@
      <h1> Add your first User</h1>
   <% for user in @company.users %>
       <%= fields_for "company[user_attributes][]", user do |user_form| %>
-        <div class="field">
-          <%= user_form.label :user_name %> <br />
-          <%= user_form.text_field :name %>
-        </div>
-        <div class="field">
+         <p>
           <%= user_form.label :user_email %> <br />
           <%= user_form.text_field :email %>
-        </div>
-        <div class="field">
+         </p>
+         <p>
           <%= user_form.label :user_password %> <br />
           <%= user_form.password_field :user_password %>
-        </div>
-        <div class="field">
+          </p>
+          <p>
           <%= user_form.label :password_confirmation %> <br />
           <%= user_form.password_field :user_password_confirmation %>
-        </div>
+          </p>
       <% end %>
   <% end %>
     <div class="actions">

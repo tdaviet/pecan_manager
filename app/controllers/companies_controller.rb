@@ -8,7 +8,8 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(params[:company])
     if @company.save
-      # handle a successful save
+      flash[:success] = "new company created"
+     redirect_to @company
     else
       @title = "New Company Sign up"
       render 'new'

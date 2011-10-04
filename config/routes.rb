@@ -11,7 +11,7 @@ PecanManager::Application.routes.draw do
   match '/help',    :to => 'pages#help'
 #  match '/signup',  :to => 'users#new'
 
-  get "users/new"
+  #get "users/new"
   
   root :to => "pages#home"
   

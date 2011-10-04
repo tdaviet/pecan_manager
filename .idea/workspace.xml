@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef08c14a-fed3-4220-bc95-4cec15cbeb8f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/companies/show.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/requests/companies_spec.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/companies_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/companies_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/company.rb" afterPath="$PROJECT_DIR$/app/models/company.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/companies/new.html.erb" afterPath="$PROJECT_DIR$/app/views/companies/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/controllers/companies_controller_spec.rb" afterPath="$PROJECT_DIR$/spec/controllers/companies_controller_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/controllers/users_controller_spec.rb" afterPath="$PROJECT_DIR$/spec/controllers/users_controller_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/company_spec.rb" afterPath="$PROJECT_DIR$/spec/models/company_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/user_spec.rb" afterPath="$PROJECT_DIR$/spec/models/user_spec.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webrat.log" afterPath="$PROJECT_DIR$/webrat.log" />
     </list>
     <ignored path="pecan_manager.iws" />
@@ -30,37 +39,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <file leaf-file-name="home.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/pages/home.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="2" selection-start="926" selection-end="926" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/models/user_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="2" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="company.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/company.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="3" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -69,7 +51,16 @@
       <file leaf-file-name="company_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/models/company_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="49" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0">
+            <state line="70" column="0" selection-start="1420" selection-end="1420" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="companies_spec.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spec/requests/companies_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="28" selection-start="601" selection-end="601" vertical-scroll-proportion="0.51320755">
               <folding />
             </state>
           </provider>
@@ -78,43 +69,16 @@
       <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/companies/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="42" selection-start="1079" selection-end="1079" vertical-scroll-proportion="-20.923077">
+            <state line="22" column="14" selection-start="789" selection-end="789" vertical-scroll-proportion="-14.384615">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="companies_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/companies_controller.rb">
+      <file leaf-file-name="spec_helper.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="36" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="7" selection-start="59" selection-end="59" vertical-scroll-proportion="0.13178295">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="factories.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/factories.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="27" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="companies_controller_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/controllers/companies_controller_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="42" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -134,22 +98,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/db/migrate/20110930045020_add_customer_id_to_user.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20110930053504_rename_password_column.rb" />
-        <option value="$PROJECT_DIR$/spec/requests/layout_links_spec.rb" />
-        <option value="$PROJECT_DIR$/app/views/pages/home.html.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/spec/controllers/companies_controller_spec.rb" />
-        <option value="$PROJECT_DIR$/app/views/shared/_error_messages.html.erb" />
-        <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/spec/factories.rb" />
-        <option value="$PROJECT_DIR$/spec/models/company_spec.rb" />
-        <option value="$PROJECT_DIR$/spec/models/user_spec.rb" />
-        <option value="$PROJECT_DIR$/app/models/user.rb" />
-        <option value="$PROJECT_DIR$/app/models/company.rb" />
-        <option value="$PROJECT_DIR$/app/views/companies/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/companies_controller.rb" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/views/companies/show.html.erb" />
+        <option value="$PROJECT_DIR$/spec/controllers/companies_controller_spec.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/companies_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/company.rb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/spec/models/user_spec.rb" />
+        <option value="$PROJECT_DIR$/app/views/companies/new.html.erb" />
+        <option value="$PROJECT_DIR$/spec/controllers/users_controller_spec.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/spec/models/company_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/requests/users_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/requests/companies_spec.rb" />
       </list>
     </option>
   </component>
@@ -179,6 +143,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -296,6 +262,10 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -316,6 +286,90 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pecan_manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pecan_manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pecan_manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pecan_manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pecan_manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pecan_manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pecan_manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pecan_manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="companies" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -372,8 +426,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Favorites" />
-      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -664,14 +716,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="272" y="25" width="1008" height="969" extended-state="0" />
+    <frame x="151" y="47" width="1129" height="969" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991803" sideWeight="0.6643026" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28586066" sideWeight="0.32624114" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25432998" sideWeight="0.32624114" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -728,110 +780,90 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/spec/requests/layout_links_spec.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/companies/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="69" selection-start="171" selection-end="171" vertical-scroll-proportion="0.14968553" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="56" selection-start="1817" selection-end="1817" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_error_messages.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="6" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="58" selection-start="1934" selection-end="1934" vertical-scroll-proportion="0.827027">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/factories.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="27" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20110905045751_create_companies.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/models/company_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="49" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/models/user_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="2" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="21" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/controllers/companies_controller_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="42" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="59" column="22" selection-start="1407" selection-end="1407" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="7" selection-start="136" selection-end="136" vertical-scroll-proportion="-3.9230769" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="59" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="61" selection-start="221" selection-end="221" vertical-scroll-proportion="0.21963824" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="3" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/company.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="3" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0">
+        <state line="23" column="28" selection-start="569" selection-end="569" vertical-scroll-proportion="0.4918239" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/companies_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="5" selection-start="296" selection-end="296" vertical-scroll-proportion="0.22916667" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="4" selection-start="129" selection-end="129" vertical-scroll-proportion="0.104166664" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/controllers/users_controller_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="70" selection-start="548" selection-end="548" vertical-scroll-proportion="0.47916666" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/models/user_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="63" selection-start="535" selection-end="535" vertical-scroll-proportion="0.4234122" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/home.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/models/company_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="0" selection-start="1420" selection-end="1420" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/companies/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="42" selection-start="1079" selection-end="1079" vertical-scroll-proportion="-20.923077">
+        <state line="22" column="14" selection-start="789" selection-end="789" vertical-scroll-proportion="-14.384615">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="2" selection-start="926" selection-end="926" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/companies_controller.rb">
+    <entry file="file://$PROJECT_DIR$/spec/requests/companies_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="36" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="7" selection-start="59" selection-end="59" vertical-scroll-proportion="0.13178295">
+        <state line="24" column="28" selection-start="601" selection-end="601" vertical-scroll-proportion="0.51320755">
           <folding />
         </state>
       </provider>

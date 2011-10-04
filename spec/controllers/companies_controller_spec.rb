@@ -39,5 +39,28 @@ describe CompaniesController do
         response.should render_template('new')
       end
     end
+
+    describe "success" do
+
+      before(:each) do
+        @attr = { :name => "John Doe Farms"}
+      end
+
+      it "should create a company" do
+        lambda do
+          post :create, :company => @attr
+        end.should change(Company, :count).by(1)
+      end
+
+      it "should redirect to the company show page" do
+        post :create, :company => @attr
+        response.should redirect_to(company_path(assigns(:company)))
+      end
+
+      it "should have a  welcome message" do
+        post :create, :company =>@attr
+        flash[:success].should =~ /new company created/i
+      end
+    end
   end
 end

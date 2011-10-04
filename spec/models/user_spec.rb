@@ -16,7 +16,7 @@ describe User do
   before(:each) do
     @company = Factory(:company)
     @attr = {
-      :name                        => "Example User",
+      #:name                        => "Example User",
       :email                       => "user@example.com",
       :user_password               => "foobar",
       :user_password_confirmation  => "foobar"
@@ -31,21 +31,21 @@ describe User do
     User.new(@attr).should_not be_valid
   end
 
-  it "should require a name" do
-    no_name_user = @company.users.build(@attr.merge(:name => ""))
-    no_name_user.should_not be_valid
-  end
+  #it "should require a name" do
+  #  no_name_user = @company.users.build(@attr.merge(:name => ""))
+  #  no_name_user.should_not be_valid
+  #end
   
   it "should require an email address" do
     no_email_user = @company.users.new(@attr.merge(:email => ""))
     no_email_user.should_not be_valid
   end
-  
-  it "should reject names that are too long" do
-    long_name = "a" * 51
-    long_name_user = @company.users.new(@attr.merge(:name => long_name))
-    long_name_user.should_not be_valid
-  end
+
+  #it "should reject names that are too long" do
+  #  long_name = "a" * 51
+  #  long_name_user = @company.users.new(@attr.merge(:name => long_name))
+  #  long_name_user.should_not be_valid
+  #end
   
   it "should accept valid email addresses" do
     addresses = %w[user@foo.com THE_USER@foo.bar.org first.last@foo.jp]
