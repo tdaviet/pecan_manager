@@ -55,16 +55,15 @@ describe "Company" do
       company_with_duplicate_name = Company.new(@attr)
       company_with_duplicate_name.should_not be_valid
     end
-  end
 
-  describe "user associations" do
-
-    before(:each) do
-      @company = Company.create(@attr)
-    end
-
-    it "should have a users attribute" do
-      @company.should respond_to(:users)
+    describe "user validations" do
+       before(:each) do
+         @user = Factory(:user)
+       end
+      #it "should require an email" do
+      #   no_email_user = Company.new(@user.merge(:users_atttributes => {:email => ""}))
+      #   no_email_user.should_not be_valid
+      #end
     end
   end
 

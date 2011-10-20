@@ -3,6 +3,33 @@ require 'spec_helper'
 describe CompaniesController do
   render_views
 
+  describe "GET 'show'" do
+
+    before(:each) do
+      @company = Factory(:company)
+    end
+
+    it "should be successful" do
+      get :show, :id => @company
+      response.should be_success
+    end
+
+    it "should find the right company" do
+      get :show, :id => @company
+      assigns(:company).should == @company
+    end
+
+    it "should have the right title" do
+      get :show, :id => @company
+      response.should have_selector("title", :content => @company.name)
+    end
+
+    it "should have the company's name" do
+      get :show,  :id => @company
+      response.should have_selector("h1", :content => @company.name)
+    end
+  end
+
   describe "GET 'new'" do
     it "should be successful" do
       get 'new'
@@ -38,6 +65,8 @@ describe CompaniesController do
         post :create, :company => @attr
         response.should render_template('new')
       end
+
+
     end
 
     describe "success" do
