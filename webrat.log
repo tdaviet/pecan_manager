@@ -63,3 +63,6 @@ REQUESTING PAGE: POST /companies with {"utf8"=>"✓", "company"=>{"name"=>"John 
 REQUESTING PAGE: GET /signup with {} and HTTP headers {}
 REQUESTING PAGE: POST /companies with {"utf8"=>"✓", "company"=>{"name"=>"John Doe Farms", "users_attributes"=>{"0"=>{"email"=>"test@test.com", "password"=>"foobar", "password_confirmation"=>"foobar"}}}, "commit"=>"Sign up"} and HTTP headers {"HTTP_REFERER"=>"/signup"}
 REQUESTING PAGE: GET http://www.example.com/companies/1 with {} and HTTP headers {"HTTP_REFERER"=>"/companies"}
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
