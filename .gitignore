@@ -5,3 +5,4 @@ tmp/
 nbproject/
 bin/
 .idea/*
+webrat.log
