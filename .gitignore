@@ -6,3 +6,4 @@ nbproject/
 bin/
 .idea/*
 webrat.log
+.idea/workspace*
