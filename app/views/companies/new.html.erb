@@ -1,7 +1,7 @@
 <h1>New Company Sign up</h1>
 
 <%= form_for(setup_company(@company)) do |f| %>
-    <%= render 'shared/error_messages_company' %>
+    <%= render 'shared/error_messages', :object => f.object %>
 
       <%= f.label :company_name %><br />
       <%= f.text_field :name %>
