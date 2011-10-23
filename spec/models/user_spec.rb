@@ -16,10 +16,10 @@ describe User do
   before(:each) do
     @company = Factory(:company)
     @attr = {
-      :name                        => "Example User",
+      #:name                        => "Example User",
       :email                       => "user@example.com",
-      :user_password               => "foobar",
-      :user_password_confirmation  => "foobar"
+      :password                    => "foobar",
+      :password_confirmation       => "foobar"
       }
   end
 
@@ -27,25 +27,25 @@ describe User do
     @company.users.create!(@attr)
   end
 
-  it "should require a company id" do
-    User.new(@attr).should_not be_valid
-  end
+  #it "should require a company id" do
+  #  User.new(@attr).should_not be_valid
+  #end
 
-  it "should require a name" do
-    no_name_user = @company.users.build(@attr.merge(:name => ""))
-    no_name_user.should_not be_valid
-  end
+  #it "should require a name" do
+  #  no_name_user = @company.users.build(@attr.merge(:name => ""))
+  #  no_name_user.should_not be_valid
+  #end
   
   it "should require an email address" do
     no_email_user = @company.users.new(@attr.merge(:email => ""))
     no_email_user.should_not be_valid
   end
-  
-  it "should reject names that are too long" do
-    long_name = "a" * 51
-    long_name_user = @company.users.new(@attr.merge(:name => long_name))
-    long_name_user.should_not be_valid
-  end
+
+  #it "should reject names that are too long" do
+  #  long_name = "a" * 51
+  #  long_name_user = @company.users.new(@attr.merge(:name => long_name))
+  #  long_name_user.should_not be_valid
+  #end
   
   it "should accept valid email addresses" do
     addresses = %w[user@foo.com THE_USER@foo.bar.org first.last@foo.jp]
@@ -80,24 +80,24 @@ describe User do
     describe "password validations" do
 
       it "should require a password" do
-        @company.users.new(@attr.merge(:user_password => "", :user_password_confirmation => "")).
+        @company.users.new(@attr.merge(:password => "", :password_confirmation => "")).
           should_not be_valid
       end
 
       it "should require a matching password confirmation" do
-        @company.users.new(@attr.merge(:user_password_confirmation => "invalid")).
+        @company.users.new(@attr.merge(:password_confirmation => "invalid")).
           should_not be_valid
       end
 
       it "should reject short passwords" do
         short = "a" * 5
-        hash = @attr.merge(:user_password => short, :user_password_confirmation => short)
+        hash = @attr.merge(:password => short, :password_confirmation => short)
         @company.users.new(hash).should_not be_valid
       end
 
       it "should reject long passwords" do
         long = "a" * 41
-        hash = @attr.merge(:user_password => long, :user_password_confirmation => long)
+        hash = @attr.merge(:password => long, :password_confirmation => long)
         @company.users.new(hash).should_not be_valid
       end
     end
@@ -119,7 +119,7 @@ describe User do
       describe "has_password? method" do
 
         it "should be true if the passwords match" do
-          @user.has_password?(@attr[:user_password]).should be_true
+          @user.has_password?(@attr[:password]).should be_true
         end
 
         it "should be false if the passwords don't match" do
@@ -141,7 +141,7 @@ describe User do
         end
 
         it "should return the user on email/password match" do
-          matching_user = User.authenticate(@attr[:email], @attr[:user_password])
+          matching_user = User.authenticate(@attr[:email], @attr[:password])
           matching_user.should == @user
         end
       end
@@ -156,10 +156,12 @@ describe User do
 
     it "should have a company attribute" do
       @user.should respond_to(:company)
-      #@user.company_id.should == @company.id
-      #@user.company.should == @company
     end
 
+    it "should have the right associated company" do
+      @user.company_id.should == @company.id
+      @user.company.should == @company
+    end
 
   end
 end

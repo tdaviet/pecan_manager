@@ -1,0 +1,14 @@
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+       <h1>
+            <%= @company.name %>
+       </h1>
+    </td>
+    <td class="sidebar round">
+      <strong>Company Name</strong> <br />
+      <%= @company.name %><br />
+      <strong>URL</strong> <%= link_to company_path(@company), @company %>
+    </td>
+  </tr>
+</table>

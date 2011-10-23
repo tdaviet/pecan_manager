@@ -21,7 +21,7 @@ describe UsersController do
       
       it "should have the right title" do
         get :show, :id => @user
-        response.should have_selector("title", :content => @user.name)
+        response.should have_selector("title", :content => @user.email)
       end
 
       it "should include the user's name" do
@@ -35,16 +35,64 @@ describe UsersController do
 #      end
     end
   
-  describe "GET 'new'" do
-    
+  #describe "GET 'new'" do
+  #
+  #  it "should be successful" do
+  #    get 'new'
+  #    response.should be_success
+  #  end
+  #
+  #  it "should have the right title" do
+  #    get 'new'
+  #    response.should have_selector("title", :content => "Sign up")
+  #  end
+  #end
+
+  describe "POST 'create'" do
+
+     before(:each) do
+       @company = Factory(:company)
+     end
+
+        describe "success" do
+
+          before(:each) do
+            @attr = { :email                 => "mhartl@example.com",
+                      :password              => "foobar",
+                      :password_confirmation => "foobar",
+
+            }
+          end
+
+            it "should sign the user in" do
+              post :create, :user => @attr
+              controller.should be_signed_in
+            end
+
+          #currently no test to see if a user is created
+        #it "should create a user" do
+        #  lambda do
+        #    post :create, :user => @attr
+        #  end.should change(User, :count).by(1)
+        #end
+    end
+  end
+
+  describe "GET 'edit'" do
+
+    before(:each) do
+      @user = Factory(:user)
+      test_sign_in(@user)
+    end
+
     it "should be successful" do
-      get 'new'
+      get :edit, :id => @user
       response.should be_success
     end
-    
+
     it "should have the right title" do
-      get 'new'
-      response.should have_selector("title", :content => "Sign up")
+      get :edit, :id => @user
+      response.should have_selector("title", :content => "Edit user")
     end
   end
 end
