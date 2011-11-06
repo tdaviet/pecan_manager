@@ -73,6 +73,7 @@ describe CompaniesController do
 
       before(:each) do
         @attr = { :name => "John Doe Farms"}
+        @user = Factory(:user)
       end
 
       it "should create a company" do
@@ -90,6 +91,18 @@ describe CompaniesController do
         post :create, :company =>@attr
         flash[:success].should =~ /new company created/i
       end
+
+      #it "should sign the user in" do
+      #  post :create, :session => @attr
+      #  controller.current_user.should == @user
+      #  controller.should be_signed_in
+      #end
+      #
+      #it "should redirect to the user show page" do
+      #  post :create, :session => @attr
+      #  response.should redirect_to(user_path(@user))
+      #end
+
     end
   end
 end

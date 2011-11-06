@@ -10,11 +10,11 @@
 
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :company_id
 
   belongs_to :company
 
-  default_scope :order => 'users.created_at DESC'
+  #default_scope :order => 'users.created_at DESC'
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -26,6 +26,9 @@ class User < ActiveRecord::Base
   validates :password,      :presence     => true,
                             :confirmation => true,
                             :length       => { :within => 6..40 }
+
+  #validates :company_id,    :presence     => true
+
 
   before_save :encrypt_password
 
@@ -65,3 +68,7 @@ class User < ActiveRecord::Base
       Digest::SHA2.hexdigest(string)
     end
 end
+
+# need if loop for company create fail
+# need a way to make a user an administrator
+# need for company create to also sign in

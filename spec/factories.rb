@@ -1,5 +1,9 @@
+Factory.sequence :name do |n|
+  "John Doe Farms#{n}"
+end
+
 Factory.define :company do |company|
-  company.name        "John Doe Farms"
+  company.name        { Factory.next(:name) }#"John Doe Farms"
 
 end
 

@@ -47,6 +47,20 @@ describe "LayoutLinks" do
     response.should have_selector('title', :content => "Sign up")
     end
 
+  describe "when creating a new company" do
+
+    #it "should have a signout link" do
+    #  visit signup_path
+    #  fill_in "company_name",     :with => "John Doe Farms"
+    #  fill_in "company_users_attributes_0_email", :with => "test@test.com"
+    #  fill_in "company_users_attributes_0_password", :with => "foobar"
+    #  fill_in "company_users_attributes_0_password_confirmation", :with => "foobar"
+    #  click_button
+    #  response.should have_selector("a",  :href => signout_path,
+    #                                     :content => "Sign out")
+    #end
+  end
+
   describe "when signed in" do
     it "should have a signin link" do
       visit root_path
