@@ -16,3 +16,8 @@ Factory.define :user do |user|
   user.association :company
 end
 
+Factory.define :farm do |farm|
+  farm.farm_name                  "Happy Dale"
+  farm.association :company
+end
+

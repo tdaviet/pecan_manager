@@ -55,9 +55,9 @@ describe SessionsController do
         controller.should be_signed_in
       end
 
-      it "should redirect to the user's company show page" do
+      it "should redirect to the company's home page" do
         post :create, :session => @attr
-        response.should redirect_to(company_path(@user))
+        response.should redirect_to(root_path)
       end
     end
   end

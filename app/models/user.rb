@@ -10,7 +10,7 @@
 
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :password, :password_confirmation, :company_id
+  attr_accessible :name, :email, :password, :password_confirmation#, :company_id
 
   belongs_to :company
 
@@ -72,3 +72,4 @@ end
 # need if loop for company create fail
 # need a way to make a user an administrator
 # need for company create to also sign in
+# profile link should go to companies#show

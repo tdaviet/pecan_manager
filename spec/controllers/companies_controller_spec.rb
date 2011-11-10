@@ -28,6 +28,15 @@ describe CompaniesController do
       get :show,  :id => @company
       response.should have_selector("h1", :content => @company.name)
     end
+
+    it "should show the company's farms" do
+      farm1 = Factory(:farm, :company => @company, :farm_name => "Happy Dale")
+      #mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")
+      get :show, :id => @company
+      response.should have_selector("span.content", :content => farm1.farm_name)
+      #response.should have_selector("span.content", :content => mp2.content)
+    end
+
   end
 
   describe "GET 'new'" do
@@ -82,9 +91,9 @@ describe CompaniesController do
         end.should change(Company, :count).by(1)
       end
 
-      it "should redirect to the company show page" do
+      it "should redirect to the user signin page" do
         post :create, :company => @attr
-        response.should redirect_to(company_path(assigns(:company)))
+        response.should redirect_to(signin_path)#(company_path(assigns(:company)))
       end
 
       it "should have a  welcome message" do

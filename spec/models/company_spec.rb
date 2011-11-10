@@ -39,7 +39,6 @@ describe "Company" do
 
   describe "validations" do
 
-
     it "should require a name" do
       no_name_company = Company.new(@attr.merge(:name => ""))
       no_name_company.should_not be_valid
@@ -67,5 +66,34 @@ describe "Company" do
     end
   end
 
+  describe "farm associations" do
+
+    before(:each) do
+      @company = Company.create(@attr)
+      @fm1 =     Factory(:farm, :company => @company)
+    end
+
+    it "should have a farms attribute" do
+      @company.should respond_to(:farms)
+    end
+
+    describe "status feed" do
+
+      it "should have a feed" do
+        @company.should respond_to(:feed)
+      end
+
+      it "should include the company's farms" do
+        @company.feed.include?(@fm1).should be_true
+        #@company.feed.include?(@fm2).should be_true
+      end
+
+      it "should not include a different company's farms" do
+        mp3 = Factory(:farm,
+                      :company => Factory(:company, :name => Factory.next(:name)))
+        @company.feed.include?(mp3).should be_false
+      end
+    end
+  end
 
 end

@@ -40,7 +40,7 @@ describe "Companies" do
           click_button
           response.should have_selector("div.flash.success",
                                         :content => "new company created")
-          response.should render_template('companies/show')
+          response.should render_template(root_path) #'companies/show')
         end.should change(Company, :count).by(1)
       end
     end

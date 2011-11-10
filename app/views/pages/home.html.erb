@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
-  
+<% if signed_in? %>
+    <table class="front" summary="For signed-in users">
+      <tr>
+        <td class="main">
+          <h1 class="farm">
+          <%= @company.name %> </h1>
+         <%= render 'shared/feed' %>
+          <h1 class="farm">Add a new Farm</h1>
+         <%= render 'shared/farm_form' %>
+
+        </td>
+        <td class="sidebar round">
+          <%= render 'shared/company_info' %>
+        </td>
+      </tr>
+    </table>
+<% else %>
     <h1>Pecan Manager</h1>
     <p>
       This is the home page for the Pecan Manager software alpha development.
     </p>
     
     <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
-
+<% end %>
 </html>

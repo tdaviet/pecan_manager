@@ -1,0 +1,15 @@
+<div class="user_info">
+  <% company_id = current_user.company_id %>
+  <% @company = Company.find(company_id) %>
+  <a href="<%= company_path(@company) %>">
+  <%= @company.name %> <br />
+ </a>
+      <span class="farms">
+      <%= pluralize(@company.farms.count, "farm") %><br />
+    </span>
+    <span class="user_name">
+    Current user:
+      <%= current_user.email %>
+    </span>
+
+</div>
