@@ -6,7 +6,12 @@
         <td class="main">
           <h1 class="farm">
           <%= @company.name %> </h1>
-         <%= render 'shared/feed' %>
+          <% @company.farms.each do |farm_info| %>
+              <% @farm_info = farm_info %>
+              <%= @farm_info.farm_name %> <br />
+          <% end %>
+
+         <%#= render 'shared/feed' %>
           <h1 class="farm">Add a new Farm</h1>
          <%= render 'shared/farm_form' %>
 

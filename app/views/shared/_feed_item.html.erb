@@ -3,7 +3,7 @@
     <span class="user">
       <%#= feed_item.company.name %> <%#= link_to feed_item.company %>
     </span>
-    <span class="content"><%= link_to feed_item.farm_name %></span>
+    <span class="content"><%= link_to feed_item.farm_name, farms_path(feed_item) %></span>
   </td>
 
 </tr>

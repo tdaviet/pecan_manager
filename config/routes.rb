@@ -13,6 +13,7 @@ PecanManager::Application.routes.draw do
   match '/signup',  :to => 'companies#new'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
+  match '/farms',   :to => 'farms#show'
   
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
