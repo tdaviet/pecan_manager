@@ -1,5 +1,5 @@
 PecanManager::Application.routes.draw do
-  get "farms/new"
+  #get "farms/new"
 
   get "sessions/new"
 
@@ -8,12 +8,12 @@ PecanManager::Application.routes.draw do
   resources :companies
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :farms, :only => [:create, :destroy]
+  resources :farms#, :only => [:new, :create, :destroy]
 
   match '/signup',  :to => 'companies#new'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
-  match '/farms',   :to => 'farms#show'
+  match '/farm',    :to => 'farms#new'
   
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'

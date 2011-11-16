@@ -4,9 +4,9 @@ class FarmsController < ApplicationController
   def create
     company_id = current_user.company_id
     @company = Company.find(company_id)
-    @farm = @company.farms.build(params[:farm])
+    @farm_new = @company.farms.build(params[:farm])
     #@feed_items = ""
-    if @farm.save
+    if @farm_new.save
       flash[:success] = "farm created"
       redirect_to root_path
     else
@@ -15,12 +15,14 @@ class FarmsController < ApplicationController
   end
 
   def show
+    @farm = Farm.find(params[:id])
     company_id = current_user.company_id
     @company = Company.find(company_id)
+    #@farm = "test"#@company.farms.build(params[:farm])
     @title = @company.name
   end
 
   def destroy
-
+     redirect_to root_path
   end
 end

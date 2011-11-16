@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])#@company.users.build(params[:user])
+    @user = User.new(params[:user])
     if @user.save
       sign_in @user
       flash[:success] = "You are signed in."

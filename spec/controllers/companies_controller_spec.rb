@@ -31,10 +31,8 @@ describe CompaniesController do
 
     it "should show the company's farms" do
       farm1 = Factory(:farm, :company => @company, :farm_name => "Happy Dale")
-      #mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")
       get :show, :id => @company
       response.should have_selector("span.content", :content => farm1.farm_name)
-      #response.should have_selector("span.content", :content => mp2.content)
     end
 
   end
@@ -113,5 +111,7 @@ describe CompaniesController do
       #end
 
     end
+
+
   end
 end

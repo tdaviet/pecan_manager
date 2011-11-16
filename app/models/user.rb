@@ -73,3 +73,4 @@ end
 # need a way to make a user an administrator
 # need for company create to also sign in
 # profile link should go to companies#show
+# no tests for farm create

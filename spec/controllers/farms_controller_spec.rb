@@ -72,4 +72,18 @@ describe FarmsController do
     end
   end
 
+  describe "GET 'show'" do
+
+    before(:each) do
+      @user = test_sign_in(Factory(:user))
+      company_id = @user.company_id
+      @company = Company.find(company_id)
+      @farm = Factory(:farm)#@company.farms.first
+    end
+
+    it "should have the right title" do
+      get :show, :id => @farm
+      response.should have_selector("title", :content => @company.name)
+    end
+  end
 end

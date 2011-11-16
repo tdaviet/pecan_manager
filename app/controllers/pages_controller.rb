@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def home
     @title = "Home"
     if signed_in?
-      @farm = Farm.new
+      @farm_new = Farm.new
       company_id = current_user.company_id
       @company = Company.find(company_id)
       @feed_items = @company.feed.paginate(:page => params[:page])
