@@ -85,5 +85,11 @@ describe FarmsController do
       get :show, :id => @farm
       response.should have_selector("title", :content => @company.name)
     end
+
+    it "should show the farm's blocks" do
+      block1 = Factory(:block, :farm => @farm, :block_number => "1")
+      get :show, :id => @farm
+      response.should have_selector("span.block_number", :block_number => block1.block_number)
+    end
   end
 end

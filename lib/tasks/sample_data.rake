@@ -37,5 +37,10 @@ namespace :db do
           end
         end
 
+        2.times do |x|
+          Farm.all(:limit => 4).each do |farm|
+            farm.blocks.create!(:block_number => "#{x+1}")
+          end
+        end
   end
 end

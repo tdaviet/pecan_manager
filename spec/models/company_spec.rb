@@ -59,10 +59,7 @@ describe "Company" do
        before(:each) do
          @user = Factory(:user)
        end
-      #it "should require an email" do
-      #   no_email_user = Company.new(@user.merge(:users_atttributes => {:email => ""}))
-      #   no_email_user.should_not be_valid
-      #end
+
     end
   end
 
@@ -85,7 +82,6 @@ describe "Company" do
 
       it "should include the company's farms" do
         @company.feed.include?(@fm1).should be_true
-        #@company.feed.include?(@fm2).should be_true
       end
 
       it "should not include a different company's farms" do

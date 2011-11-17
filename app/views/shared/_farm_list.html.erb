@@ -1,7 +1,7 @@
 <% @company.farms.each do |farm_info| %>
     <% @farm_info = farm_info %>
         <% unless @farm_info.id.nil? %>
-    <a href="<%= farm_path(@farm_info) %>">
+    <a href="<%= farm_path(:id => @farm_info.id) %>">
     <%= @farm_info.farm_name %> </a>
 <%#= link_to @farm_info.farm_name, farms_path(@farm_info) %> <br />
     <% end %>

@@ -1,0 +1,13 @@
+<%= form_for @block_new do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :block_number %> <br />
+    <%= f.number_field :block_number %>
+    <%= f.hidden_field :farm_id %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
+

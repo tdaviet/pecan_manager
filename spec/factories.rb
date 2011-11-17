@@ -21,3 +21,8 @@ Factory.define :farm do |farm|
   farm.association :company
 end
 
+Factory.define :block do |block|
+  block.block_number              "1"
+  block.association :farm
+end
+

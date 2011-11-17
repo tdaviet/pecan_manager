@@ -182,21 +182,23 @@ h1.farm {
   margin-bottom: 0.3em;
 }
 
-table.farms {
+table.farm {
   margin-top: 1em;
+  width: 50%;
 }
 
-table.farms tr {
-  height: 70px;
+table.farm tr {
+  height: 40px;
+  width:  50%;
 }
 
-table.farms tr td.farm {
+table.farm tr td.farm {
   border-top: 1px solid #ccc;
   vertical-align: top;
   padding-top: 10px;
 }
 
-table.farms tr td.farm span.timestamp {
+table.farm tr td.farm span.block_number {
   display: block;
   font-size: 85%;
   color: #666;
@@ -223,6 +225,59 @@ form.new_farm {
 }
 
 form.new_farm textarea {
-  height: 4em;
+  height: 2em;
+  margin-bottom: 0;
+}
+
+h1.block {
+  margin-bottom: 0.3em;
+}
+
+table.blocks {
+  margin-top: 1em;
+}
+
+table.blocks tr {
+  height: 30px;
+}
+
+
+table.blocks tr td.block {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  padding-top: 10px;
+}
+
+table.farm tr td.block span.block_number {
+  display: block;
+  font-size: 85%;
+  color: #666;
+}
+
+div.farm img {
+  padding-right: 0.1em;
+}
+
+div.farm a {
+  text-decoration: none;
+}
+
+div.farm span.farm_name {
+  position: absolute;
+}
+
+div.farm span.block_number {
+  position: absolute;
+}
+div.farm span.block_number {
+  font-size: 80%;
+}
+
+form.new_block {
+  margin-bottom: 2em;
+}
+
+form.new_block number_field {
+  height: 2em;
   margin-bottom: 0;
 }

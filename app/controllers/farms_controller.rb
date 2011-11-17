@@ -18,7 +18,8 @@ class FarmsController < ApplicationController
     @farm = Farm.find(params[:id])
     company_id = current_user.company_id
     @company = Company.find(company_id)
-    #@farm = "test"#@company.farms.build(params[:farm])
+    @blocks = @farm.blocks#.paginate(:page => params[:page])
+    @block_new = @farm.blocks
     @title = @company.name
   end
 

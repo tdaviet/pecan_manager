@@ -4,9 +4,7 @@ describe Farm do
 
   before(:each) do
     @company = Factory(:company)
-    @attr = {
-      :farm_name        => "Dixie Ranch"
-    }
+    @attr = { :farm_name        => "Dixie Ranch"}
   end
 
   it "should create a new instance given valid attributes" do
@@ -38,6 +36,25 @@ describe Farm do
     it "should have the right associated company" do
       @farm.company_id.should == @company.id
       @farm.company.should == @company
+    end
+  end
+
+  describe 'block associations' do
+
+    before(:each) do
+      @farm = Factory(:farm, :company => @company)
+      @block1 = Factory(:block, :farm => @farm)
+    end
+
+    it "should have a block attribute" do
+      @farm.should respond_to(:blocks)
+    end
+
+    it "should destroy associated blocks" do
+      @farm.destroy
+      [@block1].each do |block|
+        Block.find_by_id(block.id).should be_nil
+      end
     end
   end
 end
