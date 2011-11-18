@@ -1,0 +1,8 @@
+<% @farm.blocks.each do |block_info| %>
+    <% @block_list = block_info %>
+    <% unless @block_list.block_number.nil? %>
+
+        <%= @block_list.block_number %>  <br />
+    <% end %>
+<% end %>
+

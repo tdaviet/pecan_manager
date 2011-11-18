@@ -5,4 +5,6 @@ class Block < ActiveRecord::Base
 
   validates :block_number,  :presence => true
   validates :farm_id,       :presence => true
+  validates_uniqueness_of   :block_number, :scope => :farm_id
+
 end

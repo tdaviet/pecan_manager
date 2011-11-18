@@ -2,8 +2,8 @@
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
     <%= f.label :block_number %> <br />
-    <%= f.number_field :block_number %>
-    <%= f.hidden_field :farm_id %>
+    <%= f.text_field :block_number %>
+    <%= f.hidden_field :farm_id, :value => @farm.id %>
 
   </div>
   <div class="actions">

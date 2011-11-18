@@ -20,12 +20,16 @@ describe BlocksController do
 
     before(:each) do
       @user = test_sign_in(Factory(:user))
+      company_id = @user.company_id
+      @company = Company.find(company_id)
+      @farm = Factory(:farm) #@company.farms.first
     end
 
     describe "failure" do
 
       before(:each) do
-        @attr = { :block_number => "" }
+        @attr = { :block_number => "",
+                  :farm_id => @farm }
       end
 
       it "should not create a block" do
@@ -34,16 +38,17 @@ describe BlocksController do
         end.should_not change(Block, :count)
       end
 
-      it "should render the home page" do
+      it "should render the farms page" do
         post :create, :block => @attr
-        response.should render_template('pages/home')
+        response.should render_template('farms/show')
       end
     end
 
     describe "success" do
 
       before(:each) do
-        @attr = { :block_number => "1" }
+        @attr = { :block_number => "1",
+                  :farm_id => @farm }
       end
 
       it "should create a block" do
@@ -54,7 +59,7 @@ describe BlocksController do
 
       it "should redirect to the farm show page" do
         post :create, :block => @attr
-        response.should redirect_to(farm_path)
+        response.should redirect_to(farm_path(@farm))
       end
 
       it "should have a flash message" do

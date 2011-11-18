@@ -14,6 +14,11 @@ describe Block do
    @farm.blocks.create!(@attr)
   end
 
+  it "should require a block number" do
+    no_number_farm = @farm.blocks.new(@attr.merge(:block_number => ""))
+    no_number_farm.should_not be_valid
+  end
+
   describe "farm associations" do
 
     before(:each) do
@@ -39,5 +44,13 @@ describe Block do
     it "should require nonblank content" do
       @farm.blocks.build(:block_number => "  ").should_not be_valid
     end
+
+    it "should reject duplicate block numbers for the same farm" do
+      # Put a user with given email address into the database.
+      @farm.blocks.create!(@attr)
+      block_with_duplicate_number = @farm.blocks.new(@attr)
+      block_with_duplicate_number.should_not be_valid
+    end
+
   end
 end

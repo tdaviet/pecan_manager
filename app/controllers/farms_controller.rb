@@ -19,7 +19,7 @@ class FarmsController < ApplicationController
     company_id = current_user.company_id
     @company = Company.find(company_id)
     @blocks = @farm.blocks#.paginate(:page => params[:page])
-    @block_new = @farm.blocks
+    @block_new = Block.new
     @title = @company.name
   end
 

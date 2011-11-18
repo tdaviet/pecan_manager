@@ -69,8 +69,8 @@ class User < ActiveRecord::Base
     end
 end
 
-# need if loop for company create fail
+# need if loop for company create fail(redisplays fields)
 # need a way to make a user an administrator
 # need for company create to also sign in
 # profile link should go to companies#show
-# no tests for farm create
+

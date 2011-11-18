@@ -1,19 +1,23 @@
 <% if signed_in? %>
 
-<h3> <%= @farm.farm_name %></h3>
+
     <table class="profile" summary="For signed-in users">
       <tr>
+
         <td class="main">
-        </td>
+            <h1 class="farm">Current Farm:</h1>
+            <h3> <%= @farm.farm_name %></h3>
+
+
         <% unless @farm.blocks.empty? %>
           <table class="farm" summary="Farm blocks">
-            Blocks:
-            <%= render @blocks %>
+            Blocks: <br />
+            <%= render 'shared/block_list' %>
           </table>
         <% end %>
-
+      <h1 class="farm">Add a new Block</h1>
       <%= render 'shared/block_form' %>
-
+        </td>
         <td class="sidebar round">
           <%= render 'shared/company_info' %>
         </td>
