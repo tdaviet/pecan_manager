@@ -14,13 +14,23 @@
             Blocks: <br />
             <%= render 'shared/block_list' %>
           </table>
-        <% end %>
-      <h1 class="farm">Add a new Block</h1>
+        <% end %> </td>
+
+          <td class="sidebar round">
+            <%= render 'shared/company_info' %>
+          </td>
+
+          </tr>
+      <tr><td>
+      <h3 class="farm">Add a new Block</h3>
       <%= render 'shared/block_form' %>
         </td>
-        <td class="sidebar round">
-          <%= render 'shared/company_info' %>
+        <td class="main">
+          <h3>Add your Boxes</h3> <br />
+          box forms will go here <br />
+          with starting number and ending number fields
         </td>
+
       </tr>
     </table>
 <% else %>

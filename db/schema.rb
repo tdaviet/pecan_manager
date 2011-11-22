@@ -11,11 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111118222322) do
+ActiveRecord::Schema.define(:version => 20111118232953) do
 
   create_table "blocks", :force => true do |t|
     t.integer  "farm_id"
     t.string   "block_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "boxes", :force => true do |t|
+    t.string   "number"
+    t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

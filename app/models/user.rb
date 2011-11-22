@@ -73,4 +73,5 @@ end
 # need a way to make a user an administrator
 # need for company create to also sign in
 # profile link should go to companies#show
-
+# should add farm and add box be on company show?
+  # then home would be a choice between harvest or irrigate?
